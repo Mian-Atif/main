@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "cd65efcd-4c45-4051-b449-d487e0e02e93",
+		"name": "php project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "regestration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\":\"atif\",\r\n    \"email\":\"muhammadatifrizwan@gmail.com\",\r\n    \"password\":123,\r\n    \"company_name\":\"paperless\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/regestration.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"regestration.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add table",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/project/table.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"table.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login merchant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\":\"hamza\",\r\n    \"email\":\"hamzaatifrizwan@gmail.com\",\r\n    \"password\":\"1234\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/add_user.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"add_user.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userlogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"email\":\"fdffdfd@gmail.com\",\r\n    \"password\":\"bila123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/UserLogIn.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"UserLogIn.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set_user_Permission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"atif\",\r\n    \"permission_name\":\"view\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/project/User_Permission.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"User_Permission.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign_roll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"atif\",\r\n    \"roll_name\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/project/assign_roll.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"assign_roll.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
