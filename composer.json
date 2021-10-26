@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mailjet/mailjet-apiv3-php": "^1.5",
+        "firebase/php-jwt": "^5.4",
+        "cartalyst/stripe": "~2.0"
+
+    }
+}
