@@ -170,6 +170,61 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "add_roll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"roll_name\":\"sub_user\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/project/add_roll.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"add_roll.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_permission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"permission_name\":\"send mail\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/project/add_permission.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"add_permission.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
 		}
 	]
 }
