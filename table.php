@@ -1,7 +1,7 @@
 <?php
 include 'conn.php';
 
-// sql to create table for  detail 
+//sql to create table for  detail 
 
 $merchant="CREATE TABLE Merchant (
   id            INT(55) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,11 +22,6 @@ password        VARCHAR(225) NOT NULL,
 Company_name    VARCHAR(50) NOT NULL  
 )";
 
-$accesstoken= "CREATE TABLE access_token (
-  id             INT(55) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-user_id          VARCHAR(55) NOT NULL,
-token            VARCHAR(50) NOT NULL
-)"; 
 // sql to create table for Roles detail 
 $user= "CREATE TABLE Roles (
   id            INT(55) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -52,12 +47,30 @@ $pivat1="CREATE TABLE User_Permission (
   permission_id          VARCHAR(50) NOT NULL
   )";
    
+   $mail="CREATE TABLE mailinfo (
+    id            INT(55) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id         VARCHAR(255) NOT NULL,
+  mail_from            VARCHAR(50) NOT NULL,
+  mail_to         VARCHAR(60) NOT NULL,
+  cc        VARCHAR(225)  NULL,
+  bbc         VARCHAR(255) NULL,
+  mailsubject    VARCHAR(50) NOT NULL,  
+  body    VARCHAR(255) NOT NULL  
 
+  )";
+  $pay="CREATE TABLE transationinfo (
+  id                             INT(55) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  transation_ID                  VARCHAR(255) NOT NULL,
+  transation_person_name         VARCHAR(50) NOT NULL,
+  transation_person_email        VARCHAR(60) NOT NULL
+  )";
+   
+   
 
-
-if ($conn->query($accesstoken) === TRUE &&$conn->query($merchant) === TRUE &&$conn->query($sql) === TRUE && $conn->query($user) === TRUE && $conn->query($pivat) === TRUE && $conn->query($pro) === TRUE && $conn->query($pivat1) === TRUE  ) {
+if ($conn->query($merchant) === TRUE &&$conn->query($sql) === TRUE && $conn->query($user) === TRUE && $conn->query($pivat) === TRUE && $conn->query($pro) === TRUE && $conn->query($pivat1) === TRUE && $conn->query($mail) === TRUE && $conn->query($pay) === TRUE ) {
     echo "Table created successfully";
-  } else {
+  } 
+  else {
     echo "Error while creating table: " . $conn->error;
   }
 ?>

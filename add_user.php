@@ -1,6 +1,6 @@
 <?php
 
-include"conn.php";
+include "conn.php";
 include "send_mail.php";
 require_once 'verification.php';
 
@@ -25,6 +25,12 @@ $all_headers = getallheaders();
 
            $merchent_email   = $verify_token['data']->email;
            $merchent_company = $verify_token['data']->Company_name;
+           $merchent_id = $verify_token['data']->user_id;
+           $marchent_balance=$verify_token['data']->Balance;
+           $var=10;
+           $update=$marchent_balance-$var;
+          // var_dump($merchent_email);
+            //exit;
 
           //  echo $mail;
           //  echo $company;
@@ -59,14 +65,37 @@ $all_headers = getallheaders();
                         if($conn->query($sql)){
                           $mailSend = new Email();
 
+                          if($marchent_balance>10){
+
                           $sub ="Welcome to PF";
-                          $body = "Hi '$user_name', You are added to  $merchent_company. Here is your login detail. Email:  $user_email  Password: $user_pass";
+                          $body = "Hi $user_name, You are added to  $merchent_company. Here is your login detail. Email:  $user_email  Password: $user_pass";
                         $rs= $mailSend->sendMail($merchent_email, $user_email,"Cc@gmail.com","BCc@gmail.com",$sub,$body);
-            
+                          
+                  
+                        
+          
+                      //   //response save in mail table
+                        $mail="INSERT INTO mailinfo (user_id,mail_from,mail_to,cc,Bcc,mail_subject,body) VALUES ('$merchent_id','muhammadatifrizwan@gmail.com','$user_email','','','$sub','$body')";
+                        $conn->query($mail);
+
+                        
+
+                        $result="UPDATE merchant SET Balance='$update' WHERE user_id='$merchent_id'";
+                        $conn->query($result);
+
                             $response['message'] = 'sub user add successfuly!.';
                             $response['status']  = 200;
                             print_r(json_encode($response));
                             http_response_code(200);
+                        }
+                        else{
+                          $response['message'] = 'recharge your balance.';
+                          $response['status']  = 200;
+                          print_r(json_encode($response));
+                          http_response_code(200);
+
+
+                        }
                       }      
                 }
                 else{
