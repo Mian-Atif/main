@@ -218,11 +218,60 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "merchant_profile",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth_key",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJpYXQiOjE2MzUzNzIwOTAsIm5iZiI6MTYzNTM3MjEwMCwiZXhwIjoxNjM1Mzc2NjQwLCJhdWQiOiJtZXJjaGFudCIsImRhdGEiOnsiaWQiOiI0IiwidXNlcl9pZCI6Im1lcmNoZW50LTExMiIsIm5hbWUiOiJhdGlmIiwiZW1haWwiOiJtdWhhbW1hZGF0aWZyaXp3YW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MCIsIkJhbGFuY2UiOiI5MCIsIkNvbXBhbnlfbmFtZSI6InBhcGVybGVzcyJ9fQ.yRe2xUbEdmHdfC28Dd55oIGLtOO0VaLqHW4es2agh-gzbilHr2V9JULSuOsFQ0sgQQ9L5QEwpHDkU4Xp1tzKNQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/project/merchant_profile.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"merchant_profile.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RechargeAPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth_key",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJpYXQiOjE2MzUzMzY0NzIsIm5iZiI6MTYzNTMzNjQ4MiwiZXhwIjoxNjM1MzQxMDIyLCJhdWQiOiJtZXJjaGFudCIsImRhdGEiOnsiaWQiOiI0IiwidXNlcl9pZCI6Im1lcmNoZW50LTExMiIsIm5hbWUiOiJhdGlmIiwiZW1haWwiOiJtdWhhbW1hZGF0aWZyaXp3YW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIyMDJjYjk2MmFjNTkwNzViOTY0YjA3MTUyZDIzNGI3MCIsIkJhbGFuY2UiOiIxMDAiLCJDb21wYW55X25hbWUiOiJwYXBlcmxlc3MifX0.03dBGa5yc1828TzVu9GaXytgXGae1P_4kG9_MXopJh0GoGFQP4JQZ9DBgp-5ft8p0nsoFEADH_kiDXUregVzXg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card_number\":\"4242424242424242\",\r\n    \"exp_month\":\"12\",\r\n    \"exp_year\":\"22\",\r\n    \"cvc\":\"123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/project/stripe_RechargeAPI.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"project",
+						"stripe_RechargeAPI.php"
+					]
+				}
 			},
 			"response": []
 		}
